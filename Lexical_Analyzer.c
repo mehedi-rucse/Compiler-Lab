@@ -29,11 +29,12 @@ int isFloat(){
                    return 0;
                 }
             }
-            if(str[0] == '0' && str[i] != '.'){
+            if(str[0] == '0' && str[1] != '.'){
                 return 0;
             }
+            return len-i-1;
         }
-        return len-i-2;
+        
     }
     return 0;
 }
@@ -73,7 +74,7 @@ int main(){
             printf("LongINT Number\n");
         else if((str[0]>='a' && str[0]<='h') || (str[0]>'A' && str[0]<='Z' || str[0]>='o' && str[0]<='z') || (str[0]>'O' && str[0]<='Z') && validity(0,len-1))
             printf("float Variable\n");
-        else if(isFloat() == 2)
+        else if(isFloat() <= 2)
             printf("float Number\n");
         else if(isFloat() >= 3)
             printf("Double Number\n");
